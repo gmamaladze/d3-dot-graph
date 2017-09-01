@@ -1,0 +1,14 @@
+digraph "summary" {
+  "ui"                                               -> "java.desktop (java.desktop)";
+  "ui"                                               -> "logic";
+  "ui"                                               -> "model";
+  "logic"                                            -> "data";
+  "logic"                                            -> "model";
+  "app"                                              -> "logic";
+  "app"                                              -> "ui";
+  "model"                                            -> "java.xml (java.xml)";
+  "data"                                             -> "java.sql (java.sql)";
+  "data"                                             -> "model";
+  "api"                                              -> "data";
+  "api"                                              -> "logic";
+}

@@ -1,0 +1,29 @@
+{
+  "name": "d3-dot-graph",
+  "version": "1.0.0",
+  "description": "D3js compatible library to parse and load files in graphviz .dot (graph description language) format.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test/*.js",
+    "build": "pegjs --format globals --export-var d3dot grammar/dot.pegjs ",
+    "start": "npm run build"
+  },
+  ,
+  "keywords": [
+    "dot",
+    "graphviz",
+    "d3",
+    "graph"
+  ],
+    "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gmamaladze/d3-dot-graph.git"
+  },
+  "author": "George Mamaladze",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gmamaladze/d3-dot-graph/issues"
+  },
+  "homepage": "https://github.com/gmamaladze/d3-dot-graph#readme",
+  "dependencies": {}
+}
