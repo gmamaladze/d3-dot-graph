@@ -5,17 +5,17 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha test/*.js",
-    "build": "pegjs --format globals --export-var d3dot grammar/dot.pegjs ",
+    "build": "pegjs --format globals --export-var d3dotparser1 --output src/dot-parser.js grammar/dot.pegjs; rollup -c",
+    "prepublish": "rollup -c && uglifyjs build/d3-dot-graph.js -c negate_iife=false -m -o build/d3-dot-graph.min.js",
     "start": "npm run build"
   },
-  ,
   "keywords": [
     "dot",
     "graphviz",
     "d3",
     "graph"
   ],
-    "repository": {
+  "repository": {
     "type": "git",
     "url": "git+https://github.com/gmamaladze/d3-dot-graph.git"
   },
@@ -25,5 +25,9 @@
     "url": "https://github.com/gmamaladze/d3-dot-graph/issues"
   },
   "homepage": "https://github.com/gmamaladze/d3-dot-graph#readme",
-  "dependencies": {}
+  "dependencies": {
+    "pegjs": "^0.10.0",
+    "rollup": "^0.49.2",
+    "rollup-watch": "^4.3.1"
+  }
 }

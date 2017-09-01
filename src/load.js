@@ -1,11 +1,16 @@
-d3.dot =
-  function(url, converter, callback) {
+'use strict';
+
+import "./dot-parser.js";
+
+const dotparser = d3dotparser1;
+
+export default function(url, converter, callback) {
       if (arguments.length < 3) callback = converter, converter = simple;
       var r = d3
           .request(url)
           .mimeType("text/vnd.graphviz")
           .response(function(xhr) {
-            return converter(d3dot.parse(xhr.responseText)); });
+            return converter(dotparser.parse(xhr.responseText)); });
       return callback ? r.get(callback) : r;
   };
 
